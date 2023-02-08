@@ -60,18 +60,17 @@ public class Player : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
-        if(transform.position.x <= -5)
-        {
-            transform.position = new Vector3(-5, transform.position.y, transform.position.z);
-        }
-        else if(transform.position.x >= 5)
-        {
-            transform.position = new Vector3(5, transform.position.y, transform.position.z);
-        }
-        else if(transform.position.z <= transform.position.z -3)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 3);
-        }
+      //  if(transform.position.x <= -5)
+        //{
+        //    transform.position = new Vector3(-5, transform.position.y, transform.position.z);
+       // }
+        //else if(transform.position.x >= 5)
+       // {
+        //    transform.position = new Vector3(5, transform.position.y, transform.position.z);
+     //   }
+//        {
+            //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 3);
+      //  }
         
 
 

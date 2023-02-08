@@ -23,11 +23,11 @@ public class EnemySpawn : MonoBehaviour
     private void SpawnEnemy()
     {
         
-        float randomTime = Random.Range(0,5);
+        float randomTime = Random.Range(0,6);
 
         if(enemyToSpawn.name == "BusNewRotated2")
         {
-            randomTime = Random.Range(3, 18);
+            randomTime = Random.Range(7, 18);
         }
         else if(enemyToSpawn.name == "TrainNew")
         {

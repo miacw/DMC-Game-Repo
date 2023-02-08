@@ -68,12 +68,12 @@
     <Compile Include="Assets\Prefabs\PlayerRB.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\BoatMovement.cs" />
     <Compile Include="Assets\Scripts\GenerateTerrain.cs" />
     <Compile Include="Assets\Scripts\PlayerJump.cs" />
-    <Compile Include="Assets\AudioController.cs" />
+    <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementNew.cs" />
-    <Compile Include="Assets\EnemyDestroyer.cs" />
-    <Compile Include="Assets\BoatMovement.cs" />
+    <Compile Include="Assets\Scripts\EnemyDestroyer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -9,6 +9,7 @@ TagManager:
   - Lilypad
   - Coin
   - BoatCollider
+  - Floor
   layers:
   - Default
   - TransparentFX

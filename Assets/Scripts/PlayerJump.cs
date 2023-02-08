@@ -12,7 +12,7 @@ public class PlayerJump : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        jump = new Vector3(0.0f, 2.0f, 0.0f);
+        jump = new Vector3(0.0f, 6.0f, 0.0f);
         
     }
 

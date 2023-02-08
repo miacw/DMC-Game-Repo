@@ -36,7 +36,7 @@ public class PlayerRB : MonoBehaviour
             transform.forward = inputs;
         }
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
         }
