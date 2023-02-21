@@ -8,17 +8,22 @@ public class PlayerJump : MonoBehaviour
     public float jumpForce = 2.0f;
     public bool isGrounded;
     Rigidbody rb;
+
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 6.0f, 0.0f);
+        animator = GetComponent<Animator>();
         
     }
 
     private void OnCollisionStay()
     {
         isGrounded = true;
+        //animator.SetBool("jump", false);
+
         
     }
 
@@ -36,6 +41,8 @@ public class PlayerJump : MonoBehaviour
         {
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            animator.SetBool("walking", false);
+            //animator.SetBool("jump", true);
         }
         
     }

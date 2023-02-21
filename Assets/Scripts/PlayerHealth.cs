@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            gameObject.GetComponent<AudioSource>().Play();
+            //gameObject.GetComponent<AudioSource>().Play();
             Destroy(gameObject,0.25f);
             endGame("MainMenu");
         }
@@ -51,15 +51,15 @@ public class PlayerHealth : MonoBehaviour
             Destroy(gameObject);
             endGame("MainMenu");
         }
-        else if(collision.gameObject.tag == "Lilypad")
-        {
-            Debug.Log("standing on Lilypad");
-            gameController.GetComponent<GameController>().IncreaseScore(1);
+        //else if(collision.gameObject.tag == "Lilypad")
+        //{
+           // Debug.Log("standing on Lilypad");
+            //gameController.GetComponent<GameController>().IncreaseScore(1);
 
            // player.GetComponent<PlayerScore>().playerScore += 1;
            // player.GetComponent<PlayerScore>().SetScore(player.GetComponent<PlayerScore>().playerScore);
             
-        }
+        //}
 
 
         

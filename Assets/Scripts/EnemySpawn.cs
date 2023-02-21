@@ -27,7 +27,7 @@ public class EnemySpawn : MonoBehaviour
 
         if(enemyToSpawn.name == "BusNewRotated2")
         {
-            randomTime = Random.Range(7, 18);
+            randomTime = Random.Range(7, 20);
         }
         else if(enemyToSpawn.name == "TrainNew")
         {
