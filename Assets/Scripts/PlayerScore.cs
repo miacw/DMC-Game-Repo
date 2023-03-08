@@ -43,6 +43,11 @@ public class PlayerScore : MonoBehaviour
             Destroy(collision.gameObject, 0.4f);
             
         }
+
+        if (collision.gameObject.tag == "Win")
+        {
+
+        }
         
     }
 

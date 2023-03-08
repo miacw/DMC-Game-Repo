@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     public TMP_Text playerScoreText;
     public Text highscoreText;
     public GameObject pauseMenu;
+    public GameObject loseMenu;
+    public GameObject winMenu;
     private CanvasGroup pauseCanvas;
     public int score;
     public static bool gameIsPaused;
@@ -20,9 +22,10 @@ public class GameController : MonoBehaviour
     void Start()
     {
         //highscoreText.text = "High Score: " + PlayerPrefs.GetInt("highScore").ToString();
+        Time.timeScale = 1f;
         score = 0;
         pauseCanvas = pauseMenu.GetComponent<CanvasGroup>();
-        pauseCanvas.alpha = 0;
+        //pauseCanvas.alpha = 0;
         
         
         
@@ -33,8 +36,8 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameIsPaused = !gameIsPaused;
-            PauseGame();
+            //gameIsPaused = !gameIsPaused;
+            PauseGame(true);
             
         }
         
@@ -53,20 +56,32 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void PauseGame()
+    public void PauseGame(bool paused)
     {
-        if (gameIsPaused)
+        if (paused )
         {
+            pauseMenu.SetActive(true);
             Time.timeScale = 0f;
-            pauseCanvas.alpha = 1;
             
         }
         else
         {
             
+            pauseMenu.SetActive(false);
             Time.timeScale = 1f;
-            pauseCanvas.alpha = 0;
 
         }
+    }
+
+    public void LoseGame()
+    {
+        loseMenu.SetActive(true);
+        //Time.timeScale = 0f;
+    }
+
+    public void WinGame()
+    {
+        winMenu.SetActive(true);
+        //Time.timeScale = 0f;
     }
 }

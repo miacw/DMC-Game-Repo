@@ -42,8 +42,11 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             //gameObject.GetComponent<AudioSource>().Play();
+            
             Destroy(gameObject,0.25f);
-            endGame("MainMenu");
+            gameController.GetComponent<GameController>().LoseGame();
+            //endGame("MainMenu");
+
         }
         else if(collision.gameObject.tag == "Water" && collision.gameObject.tag != "Lilypad")
         {

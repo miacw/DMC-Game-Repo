@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("SpawnEnemy", 0.5f);
+        Invoke("SpawnEnemy", 3f);
         
     }
 
@@ -23,9 +23,9 @@ public class EnemySpawn : MonoBehaviour
     private void SpawnEnemy()
     {
         
-        float randomTime = Random.Range(0,6);
+        float randomTime = Random.Range(10,20);
 
-        if(enemyToSpawn.name == "BusNewRotated2")
+        if(enemyToSpawn.name == "BusNewRotated2.2")
         {
             randomTime = Random.Range(7, 20);
         }
