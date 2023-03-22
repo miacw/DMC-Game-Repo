@@ -1544,9 +1544,11 @@ GameObject:
   - component: {fileID: 203256358}
   - component: {fileID: 203256357}
   - component: {fileID: 203256356}
+  - component: {fileID: 203256360}
+  - component: {fileID: 203256359}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1587,10 +1589,10 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1609,14 +1611,36 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203256355}
-  m_LocalRotation: {x: 0.3513801, y: 0.3209441, z: -0.10348509, w: 0.8733944}
-  m_LocalPosition: {x: -23.5, y: 58.4, z: -32.4}
+  m_LocalRotation: {x: 0.045015417, y: 0.7056725, z: -0.045015417, w: 0.7056725}
+  m_LocalPosition: {x: -930.3, y: 172.9, z: 145}
   m_LocalScale: {x: 1.0884, y: 1.0884, z: 1.0884}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 42.86, y: 41.729, z: 3.502}
+  m_LocalEulerAnglesHint: {x: 7.3, y: 90, z: 0}
+--- !u!114 &203256359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203256355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b329ca06397ac5a43917466c978f873c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1920317086}
+--- !u!45 &203256360
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203256355}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 133347283e115d147a5fcce7f47a538f, type: 2}
 --- !u!1001 &207991156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2424,7 +2448,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d904e1d8a6e43448c98fab4ea49bf836,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10.996579
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d904e1d8a6e43448c98fab4ea49bf836,
         type: 3}
@@ -3507,17 +3531,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 93dd69da2fa7ecc4c82d1e2d7aadaf76,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -679.3
+      value: -649.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93dd69da2fa7ecc4c82d1e2d7aadaf76,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93dd69da2fa7ecc4c82d1e2d7aadaf76,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 270.2
+      value: 257.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93dd69da2fa7ecc4c82d1e2d7aadaf76,
         type: 3}
@@ -4228,7 +4252,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 2147483647
@@ -5974,6 +5998,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3191639871787068368, guid: b004749d8f746254496a96d9f917eea5,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3191639871787068371, guid: b004749d8f746254496a96d9f917eea5,
         type: 3}
       propertyPath: m_RootOrder
@@ -7344,24 +7373,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.35
-  m_Height: 1.22
+  m_Radius: 1
+  m_Height: 3.58
   m_Direction: 0
-  m_Center: {x: -1.65, y: 1, z: 0}
---- !u!136 &1500396860
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500396856}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.35
-  m_Height: 1
-  m_Direction: 0
-  m_Center: {x: 0.92, y: 1, z: 0}
+  m_Center: {x: -0.06, y: 1.7, z: -0.4}
 --- !u!1 &1516986684
 GameObject:
   m_ObjectHideFlags: 0
@@ -9417,7 +9432,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   jump: {x: 0, y: 4, z: 0}
-  jumpForce: 700
+  jumpForce: 800
   gravity: 50
 --- !u!54 &1920317085
 Rigidbody:
@@ -10625,6 +10640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191639871787068368, guid: b004749d8f746254496a96d9f917eea5,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3191639871787068371, guid: b004749d8f746254496a96d9f917eea5,
         type: 3}

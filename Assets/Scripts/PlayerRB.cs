@@ -30,7 +30,7 @@ public class PlayerRB : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        jump = new Vector3(0.0f, 5.5f, 0.0f);
+        jump = new Vector3(0.0f, 6f, 0.0f);
         //groundChecker = transform.GetChild(0);
         isWalking = false;
         isJumping = false;
@@ -62,20 +62,13 @@ public class PlayerRB : MonoBehaviour
 
             rb.isKinematic = false;
             transform.forward = inputs;
-            
-
-
-
-
-
         }
         else
         {
             animator.SetBool("walking", false);
         }
 
-
-
+        // player jumping
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             isGrounded = false;
@@ -103,6 +96,8 @@ public class PlayerRB : MonoBehaviour
         //Debug.Log(yVel);
 
         inputs.y = yVel;
+
+        // player movement
         rb.velocity = inputs * Time.fixedDeltaTime;
 
 
