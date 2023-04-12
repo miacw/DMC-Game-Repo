@@ -21,6 +21,8 @@ public class PlayerRB : MonoBehaviour
     private bool isGrounded = false;
     private Transform groundChecker;
 
+    Vector3 boatSpeed;
+
     Animator animator;
 
     private bool isWalking;
@@ -35,7 +37,8 @@ public class PlayerRB : MonoBehaviour
         isWalking = false;
         isJumping = false;
         animator = GetComponent<Animator>();
-       
+        boatSpeed = new Vector3(0, 0, 0);
+
 
 
     }
@@ -47,7 +50,7 @@ public class PlayerRB : MonoBehaviour
 
         inputs = Vector3.zero;
         inputs.x = Input.GetAxis("Vertical") * speed;
-        inputs.z = Input.GetAxis("Horizontal") * speed;
+        inputs.z = -Input.GetAxis("Horizontal") * speed;
 
         if (inputs != Vector3.zero)
         {
@@ -55,9 +58,10 @@ public class PlayerRB : MonoBehaviour
             {
                 animator.SetBool("walking", false);
             }
-            else { 
+            else
+            {
                 animator.SetBool("walking", true);
-            
+
             }
 
             rb.isKinematic = false;
@@ -69,25 +73,25 @@ public class PlayerRB : MonoBehaviour
         }
 
         // player jumping
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             isGrounded = false;
             yVel = jumpForce;
             //rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             Debug.Log("is grounded: " + isGrounded);
             isJumping = true;
-            
-            
-            
+
+
+
             animator.SetBool("walking", false);
-            
+
 
             animator.SetBool("jump", true);
-            
+
         }
         else if (isGrounded)
         {
-            yVel = 0;
+            yVel = 9.81f;
         }
         else
         {
@@ -97,21 +101,21 @@ public class PlayerRB : MonoBehaviour
 
         inputs.y = yVel;
 
-        // player movement
-        rb.velocity = inputs * Time.fixedDeltaTime;
 
 
 
     }
 
-  
+
 
 
     private void FixedUpdate()
     {
+        // player movement
+        rb.velocity = inputs * Time.fixedDeltaTime;
 
         //rb.MovePosition(rb.position + inputs * speed * Time.fixedDeltaTime);
-       // rb.velocity = inputs * Time.fixedDeltaTime;
+        // rb.velocity = inputs * Time.fixedDeltaTime;
 
 
 
@@ -119,7 +123,7 @@ public class PlayerRB : MonoBehaviour
 
     }
 
-   
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -131,31 +135,59 @@ public class PlayerRB : MonoBehaviour
 
 
         }
-    }
 
-    
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "BoatCollider")
+        if(collision.gameObject.tag == "BoatCollider")
         {
-            
-                isGrounded = true;
-                rb.isKinematic = true;
-                transform.parent = other.transform;
-            
+            isGrounded = true;
+            isJumping = false;
+            animator.SetBool("jump", false);
+
+            boatSpeed = collision.transform.GetComponent<Rigidbody>().velocity * collision.transform.GetComponent<BoatMovement>().speed;
         }
-            
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.tag == "BoatCollider")
+        if(collision.gameObject.tag == "Lilypad")
         {
-            isGrounded = false;
+            isGrounded = true;
+            isJumping = false;
+            animator.SetBool("jump", false);
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "BoatCollider")
+        {
+            boatSpeed = Vector3.zero;
+        }
+
+
+    }
+
+
+
+
+
+    /*  private void OnTriggerStay(Collider other)
+      {
+          if (other.gameObject.tag == "BoatCollider")
+          {
+
+              isGrounded = true;
+              //rb.isKinematic = true;
+              //transform.parent = other.transform;
+
+          }
+
+      }
+
+      private void OnTriggerExit(Collider other)
+      {
+          if (other.gameObject.tag == "BoatCollider")
+          {
+              isGrounded = false;
+          }
+      }
+    */
     /*private void OnTriggerStay(Collider trigger)
     { 
         if(trigger.gameObject.tag == "BoatCollider")
@@ -187,3 +219,4 @@ public class PlayerRB : MonoBehaviour
 
 
 }
+

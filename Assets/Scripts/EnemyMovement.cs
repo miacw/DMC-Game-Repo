@@ -21,15 +21,15 @@ public class EnemyMovement : MonoBehaviour
     }
     */
 
-    float speed;
-    Vector3 movement;
+    [SerializeField] float speed;
+    [SerializeField] Vector3 movement;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        speed = 50f;
-        movement = new Vector3(0, 0, 5f);
+        
+        //movement = new Vector3(0, 0, 5f);
 
     }
 
@@ -41,5 +41,18 @@ public class EnemyMovement : MonoBehaviour
         //rb.AddForce(1.5f, 0, 0);
 
     }
+
+    private void OnTriggerEnter(Collider trigger)
+    {
+        if (trigger.gameObject.tag == "BoatCollider")
+        {
+            transform.RotateAround(transform.position, transform.up, 180f);
+            movement = new Vector3(0, 0, -movement.z);
+        }
+
+    }
+
+
+
 
 }
