@@ -32,7 +32,7 @@ public class PlayerScore : MonoBehaviour
     {
         if(collision.gameObject.tag == "Coin")
         {
-            //collision.gameObject.GetComponent<AudioSource>().Play();
+            collision.gameObject.GetComponent<AudioSource>().Play();
             /*
             playerScore += 2;
             SetScore(playerScore);
