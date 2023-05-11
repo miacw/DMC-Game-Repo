@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,6 +47,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (trigger.gameObject.tag == "BoatCollider")
         {
+            Debug.Log("collide");
             transform.RotateAround(transform.position, transform.up, 180f);
             movement = new Vector3(0, 0, -movement.z);
         }

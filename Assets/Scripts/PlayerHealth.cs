@@ -48,12 +48,7 @@ public class PlayerHealth : MonoBehaviour
             //endGame("MainMenu");
 
         }
-        else if(collision.gameObject.tag == "Water" && collision.gameObject.tag != "Lilypad")
-        {
-            
-            Destroy(gameObject);
-            endGame("MainMenu");
-        }
+        
         //else if(collision.gameObject.tag == "Lilypad")
         //{
            // Debug.Log("standing on Lilypad");
@@ -67,6 +62,8 @@ public class PlayerHealth : MonoBehaviour
 
         
     }
+
+    
 
     public void endGame(string sceneName)
     {

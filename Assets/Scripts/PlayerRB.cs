@@ -7,7 +7,7 @@ public class PlayerRB : MonoBehaviour
     private const float Y = 1f;
     public float speed = 20f;
     public float jumpHeight = 2f;
-    public float groundDistance = 0.05f;
+   
     public Vector3 boxSize;
     public LayerMask layerMask;
     public Vector3 jump;
@@ -28,6 +28,8 @@ public class PlayerRB : MonoBehaviour
     private bool isWalking;
     private bool isJumping;
 
+    public GameObject gameController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +48,7 @@ public class PlayerRB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //isGrounded = Physics.CheckSphere(groundChecker.position, groundDistance, Ground, QueryTriggerInteraction.Ignore);
+       
 
         inputs = Vector3.zero;
         inputs.x = Input.GetAxis("Vertical") * speed;
@@ -71,14 +73,14 @@ public class PlayerRB : MonoBehaviour
         {
             animator.SetBool("walking", false);
         }
-
+        //Debug.Log("is grounded: " + isGrounded);
         // player jumping
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             isGrounded = false;
             yVel = jumpForce;
             //rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-            Debug.Log("is grounded: " + isGrounded);
+            
             isJumping = true;
 
 
@@ -95,7 +97,7 @@ public class PlayerRB : MonoBehaviour
         }
         else
         {
-            yVel -= gravity;
+            yVel -= gravity * Time.deltaTime * 100;
         }
         //Debug.Log(yVel);
 
@@ -112,7 +114,7 @@ public class PlayerRB : MonoBehaviour
     private void FixedUpdate()
     {
         // player movement
-        rb.velocity = inputs * Time.fixedDeltaTime;
+        rb.velocity = (inputs + boatSpeed) * Time.fixedDeltaTime;
 
         //rb.MovePosition(rb.position + inputs * speed * Time.fixedDeltaTime);
         // rb.velocity = inputs * Time.fixedDeltaTime;
@@ -129,6 +131,7 @@ public class PlayerRB : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
+            yVel = 0;
             isGrounded = true;
             isJumping = false;
             animator.SetBool("jump", false);
@@ -143,6 +146,7 @@ public class PlayerRB : MonoBehaviour
             animator.SetBool("jump", false);
 
             boatSpeed = collision.transform.GetComponent<Rigidbody>().velocity * collision.transform.GetComponent<BoatMovement>().speed;
+            Debug.Log(boatSpeed);
         }
 
         if(collision.gameObject.tag == "Lilypad")
@@ -151,6 +155,15 @@ public class PlayerRB : MonoBehaviour
             isJumping = false;
             animator.SetBool("jump", false);
         }
+        if (collision.gameObject.tag == "Water" && collision.gameObject.tag != "Lilypad" )
+        {
+
+            Destroy(gameObject);
+            gameController.GetComponent<GameController>().LoseGame();
+
+        }
+
+        Debug.Log(collision.gameObject.tag);
     }
 
     private void OnCollisionExit(Collision collision)
@@ -163,7 +176,7 @@ public class PlayerRB : MonoBehaviour
 
     }
 
-
+   
 
 
 
