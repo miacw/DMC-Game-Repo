@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementNew.cs" />
     <Compile Include="Assets\Scripts\EnemyDestroyer.cs" />
+    <Compile Include="Assets\marketMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
