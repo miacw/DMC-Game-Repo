@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\StallSpawner.cs" />
     <Compile Include="Assets\mopedMovement.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\marketMovement.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerScore.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
@@ -79,7 +80,6 @@
     <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementNew.cs" />
     <Compile Include="Assets\Scripts\EnemyDestroyer.cs" />
-    <Compile Include="Assets\marketMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
