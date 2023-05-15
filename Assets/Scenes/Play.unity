@@ -3235,7 +3235,7 @@ PrefabInstance:
     - target: {fileID: 1451705114501350710, guid: 4ce3210fe8a05d64794081609968c5df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24
+      value: 20.3
       objectReference: {fileID: 0}
     - target: {fileID: 1451705114501350710, guid: 4ce3210fe8a05d64794081609968c5df,
         type: 3}
@@ -3281,6 +3281,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LilypadRotated
+      objectReference: {fileID: 0}
+    - target: {fileID: 6914876820659403347, guid: 4ce3210fe8a05d64794081609968c5df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984185778809248146, guid: 4ce3210fe8a05d64794081609968c5df,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce3210fe8a05d64794081609968c5df, type: 3}
@@ -8942,17 +8952,17 @@ PrefabInstance:
     - target: {fileID: 3345020295371811871, guid: c5a0e700dc920a244a354581c5f5a78d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -262.33078
+      value: -259.5
       objectReference: {fileID: 0}
     - target: {fileID: 3345020295371811871, guid: c5a0e700dc920a244a354581c5f5a78d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.903147
+      value: 23.6
       objectReference: {fileID: 0}
     - target: {fileID: 3345020295371811871, guid: c5a0e700dc920a244a354581c5f5a78d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.345062
+      value: 24.2
       objectReference: {fileID: 0}
     - target: {fileID: 3345020295371811871, guid: c5a0e700dc920a244a354581c5f5a78d,
         type: 3}
@@ -9012,22 +9022,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1622236991}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1622236994
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93613150}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &1622236995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11088,7 +11082,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 7.17, z: 0.94}
-  m_Center: {x: 0, y: 3.65, z: 0}
+  m_Center: {x: 0, y: 3.27, z: 0}
 --- !u!23 &2026906632
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11237,6 +11231,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LilypadRotated (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6914876820659403347, guid: 4ce3210fe8a05d64794081609968c5df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984185778809248146, guid: 4ce3210fe8a05d64794081609968c5df,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce3210fe8a05d64794081609968c5df, type: 3}
